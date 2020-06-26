@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <div class="menu">
+        <form action="/register" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="confirmation" placeholder="Password Confirmation" type="password">
+            </div>
+
+                <button class="btn btn-primary" type="submit">Register</button>
+        </form><br>
+        <p>Already registered?<a href="/"> Log In!</a></p>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="fixed-bottom">
+        <footer class="footer">
+                <p>Data provided for free by <a href="#">Goodreads. </a>See their API's terms of use <a href="#">here!</a></p>
+        </footer>
+    </div>
+{% endblock %}

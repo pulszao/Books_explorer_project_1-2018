@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div class="menu">
+        <form action="/" method="post">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            <button class="btn btn-primary" type="submit">Log In</button>
+        </form><br>
+        <p>Not registered yet?<a href="/register"> Register!</a></p>
+    </div>
+{% endblock %}
+{% block footer %}
+    <div class="fixed-bottom">
+        <footer class="footer">
+                <p>Data provided for free by <a href="#">Goodreads. </a>See their API's terms of use <a href="#">here!</a></p>
+        </footer>
+    </div>
+{% endblock %}

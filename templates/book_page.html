@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block main %}
+    <!--Display book content-->
+    <div class="menu">
+        <h2>Here is the info of your book:</h2>
+        <h3>Title: {{ title }}</h3>
+        <h4>Author: {{ author }}</h4>
+        <h5>Publication year: {{ year }}</h5>
+        <h5>Rating count: {{ ratings_count }}</h5>
+        <h5>Rating: {{ average_rating }} / 5</h5>
+        <h5>ISBN: {{ isbn }}</h5><br>
+        <form action="/index/{{ isbn }}" method="post" class="form-row">
+            <div class="form-group col-md-8">
+                <label>Review the book:</label>
+                <textarea autocomplete="off" autofocus class="form-control" placeholder="{{ placeholder }}" name="review" type="text" rows="3" {{ disable }}></textarea>
+            </div>
+            <div class="form-group col-md-4">
+              <div class="input-group-prepend">
+                <label>Rate</label>
+              </div>
+              <select class="custom-select" name="rate" {{ disable }}>
+                <option selected value="None">Choose...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary" {{ disable }}>Submit Review</button>
+        </form>
+
+        <!--Display reviews-->
+        {% if review %}
+            <br><h3>Reviews: </h3>
+        {% endif %}
+
+        {% for i in range(total) %}
+        <br>
+            <div class="review_box">
+                <b>Username: </b><p>{{ review[i]['username'] }}</p>
+                <b>Review: </b><p>{{ review[i]['review'] }}</p>
+                <b>Rate: </b><p>{{ review[i]['rating'] }}</p>
+            </div>
+        {% endfor %}
+
+        <br><a class="btn btn-light" href="/index">Go Back</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped" style="background-color: lightgray;">
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in books %}
+                <tr>
+                    <td><a href="/index/{{ i.isbn }}">{{ i.isbn }}</a></td>
+                    <td>{{ i.title }}</td>
+                    <td>{{ i.author }}</td>
+                    <td>{{ i.year }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-light" href="/index">Go Back</a>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block main %}
+    <form  method="post" class="menu">
+        <center>
+            <h2 class="header">Search your book here:</h2>
+            <div class="form-group" class="menu">
+            <div class="form-group col-md-6">
+              <label>Book's Title</label>
+              <input class="form-control" name="title" type="search" placeholder="Title" aria-label="Search">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Book's Author</label>
+              <input class="form-control" name="author" type="search" placeholder="author" aria-label="Search">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Book's ISBN</label>
+              <input class="form-control" name="isbn" type="search" placeholder="ISBN" aria-label="Search">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+        </center>
+    </form>
+{% endblock %}
