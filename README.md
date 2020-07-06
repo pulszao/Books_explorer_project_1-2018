@@ -1,6 +1,6 @@
 # Project 1
 
-<h1>Web Programming with Python and JavaScript</h1>
+<h1>Web Programming with Python and JavaScript - (2018)</h1>
 <h2>Books Explorer</h2>
 <p>This project is about a books exporer, using the goodreads API go get information about each title.</p>
 <ul>
